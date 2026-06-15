@@ -3,62 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Praveen DevOps Academy</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior:smooth;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:#f4f7fc;
+    background:#f8fafc;
     color:#333;
 }
 
-header{
-    background:linear-gradient(135deg,#0f172a,#2563eb);
+/* NAVBAR */
+
+nav{
+    background:#0f172a;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
     color:white;
-    padding:80px 20px;
-    text-align:center;
-}
-
-header h1{
-    font-size:3rem;
-    margin-bottom:15px;
-}
-
-header p{
-    font-size:1.2rem;
-    margin-bottom:25px;
-}
-
-.btn{
-    background:#f97316;
-    color:white;
-    padding:12px 25px;
-    text-decoration:none;
-    border-radius:30px;
+    font-size:24px;
     font-weight:bold;
 }
 
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    background:#f97316;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    margin:5px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#ea580c;
+}
+
+/* COMMON */
+
 .section{
-    padding:60px 20px;
     max-width:1200px;
     margin:auto;
+    padding:40px 20px;
 }
 
 .section h2{
     text-align:center;
-    margin-bottom:40px;
     color:#0f172a;
+    margin-bottom:10px;
+}
+
+.section-title{
+    text-align:center;
+    color:#64748b;
+    margin-bottom:25px;
 }
 
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
 
@@ -66,46 +117,81 @@ header p{
     background:white;
     padding:25px;
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
     transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-5px);
 }
 
 .card h3{
-    margin-bottom:10px;
     color:#2563eb;
-}
-
-.course{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.course ul{
-    margin-top:20px;
-    columns:2;
-}
-
-.course li{
     margin-bottom:10px;
 }
 
-.contact{
+/* CURRICULUM */
+
+.curriculum{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.topic{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    text-align:center;
+    font-weight:600;
+}
+
+/* SUCCESS */
+
+.success{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+/* TRAINERS */
+
+.trainers{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.trainer{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    min-width:280px;
+}
+
+/* REGISTER */
+
+.register{
     background:#0f172a;
     color:white;
     text-align:center;
     padding:60px 20px;
 }
 
-.contact h2{
-    margin-bottom:20px;
+.register h2{
+    margin-bottom:15px;
 }
+
+.register p{
+    margin:8px 0;
+}
+
+/* FOOTER */
 
 footer{
     background:#020617;
@@ -113,98 +199,270 @@ footer{
     text-align:center;
     padding:15px;
 }
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25D366;
+    color:white;
+    padding:15px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.3rem;
+}
+
+nav{
+    flex-direction:column;
+    gap:10px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+}
+
 </style>
 </head>
-
 <body>
 
-<header>
-    <h1>🚀 Praveen DevOps Academy</h1>
-    <p>Master DevOps, AWS & GCP with Real-Time Projects</p>
-    <a href="#course" class="btn">Join Now</a>
-</header>
+<nav>
+    <div class="logo">🚀 Praveen DevOps Academy</div>
+
+    <ul>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#curriculum">Curriculum</a></li>
+        <li><a href="#trainers">Trainers</a></li>
+        <li><a href="#register">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+<h1>Master DevOps, AWS & GCP</h1>
+
+<p>
+Become a Cloud & DevOps Engineer with
+Real-Time Projects, Interview Preparation and Hands-On Labs.
+</p>
+
+<a href="#register" class="btn">Join Now</a>
+
+</section>
+
+<section class="section" id="why">
+
+<h2>⭐ Why Students Choose Us</h2>
+
+<p class="section-title">
+Practical training focused on real-world DevOps and Cloud Engineering.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>☁ AWS & GCP</h3>
+<p>Complete cloud training with practical implementation.</p>
+</div>
+
+<div class="card">
+<h3>💻 Real-Time Projects</h3>
+<p>Work on production-style DevOps projects.</p>
+</div>
+
+<div class="card">
+<h3>🎯 Interview Preparation</h3>
+<p>Mock interviews and resume guidance.</p>
+</div>
+
+<div class="card">
+<h3>📹 Recorded Sessions</h3>
+<p>Lifetime access to training recordings.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="programs">
+
+<h2>🎓 Flexible Training Programs</h2>
+
+<p class="section-title">
+Choose the learning style that fits your schedule.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>👨‍🏫 One-to-One Training</h3>
+<p>Dedicated personal mentoring and support.</p>
+</div>
+
+<div class="card">
+<h3>👥 Weekend Batches</h3>
+<p>Ideal for working professionals.</p>
+</div>
+
+<div class="card">
+<h3>🏢 Corporate Training</h3>
+<p>Customized DevOps and Cloud workshops.</p>
+</div>
+
+<div class="card">
+<h3>🚀 Job Support</h3>
+<p>Real-time project and deployment guidance.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="curriculum">
+
+<h2>📚 Complete DevOps & Cloud Roadmap</h2>
+
+<p class="section-title">
+From Linux basics to Production Kubernetes.
+</p>
+
+<div class="curriculum">
+
+<div class="topic">Linux Administration</div>
+<div class="topic">Shell Scripting</div>
+<div class="topic">Git & GitHub</div>
+<div class="topic">Maven</div>
+<div class="topic">Jenkins</div>
+<div class="topic">Docker</div>
+<div class="topic">Kubernetes</div>
+<div class="topic">Helm</div>
+<div class="topic">Terraform</div>
+<div class="topic">Ansible</div>
+<div class="topic">AWS Cloud</div>
+<div class="topic">GCP Cloud</div>
+<div class="topic">EKS</div>
+<div class="topic">GKE</div>
+<div class="topic">Prometheus</div>
+<div class="topic">Grafana</div>
+<div class="topic">ArgoCD</div>
+<div class="topic">CI/CD Pipelines</div>
+<div class="topic">Real-Time Projects</div>
+<div class="topic">Mock Interviews</div>
+
+</div>
+
+</section>
 
 <section class="section">
-    <h2>Why Choose Us?</h2>
 
-    <div class="cards">
-        <div class="card">
-            <h3>🎯 Real-Time Projects</h3>
-            <p>Hands-on industry-level DevOps projects.</p>
-        </div>
+<h2>🛠 Tools & Technologies Covered</h2>
 
-        <div class="card">
-            <h3>☁ AWS & GCP</h3>
-            <p>Complete cloud training with practical labs.</p>
-        </div>
+<div class="cards">
 
-        <div class="card">
-            <h3>💼 Interview Prep</h3>
-            <p>Mock interviews and resume guidance.</p>
-        </div>
+<div class="card">AWS</div>
+<div class="card">GCP</div>
+<div class="card">Docker</div>
+<div class="card">Kubernetes</div>
+<div class="card">Terraform</div>
+<div class="card">Ansible</div>
+<div class="card">Jenkins</div>
+<div class="card">Prometheus</div>
+<div class="card">Grafana</div>
+<div class="card">ArgoCD</div>
+<div class="card">GitHub</div>
+<div class="card">Linux</div>
 
-        <div class="card">
-            <h3>📹 Recorded Sessions</h3>
-            <p>Lifetime access to recordings.</p>
-        </div>
-    </div>
+</div>
+
 </section>
 
-<section class="section" id="course">
-    <h2>Course Curriculum</h2>
+<section class="success">
 
-    <div class="course">
-        <ul>
-            <li>Linux Administration</li>
-            <li>Git & GitHub</li>
-            <li>Maven</li>
-            <li>Jenkins</li>
-            <li>Docker</li>
-            <li>Kubernetes</li>
-            <li>Helm</li>
-            <li>Terraform</li>
-            <li>Ansible</li>
-            <li>AWS Cloud</li>
-            <li>GCP Cloud</li>
-            <li>EKS & GKE</li>
-            <li>Prometheus</li>
-            <li>Grafana</li>
-            <li>CI/CD Pipelines</li>
-            <li>Real-Time Projects</li>
-        </ul>
-    </div>
+<h2>🏆 Learn From Industry Experts</h2>
+
+<p>
+AWS • GCP • Kubernetes • Terraform • CI/CD • DevOps
+</p>
+
+<p style="margin-top:10px;">
+One-to-One Training | Weekend Batches | Interview Preparation
+</p>
+
 </section>
 
-<section class="section">
-    <h2>Technologies Covered</h2>
+<section class="section" id="trainers">
 
-    <div class="cards">
-        <div class="card">Linux</div>
-        <div class="card">Git</div>
-        <div class="card">Jenkins</div>
-        <div class="card">Docker</div>
-        <div class="card">Kubernetes</div>
-        <div class="card">Terraform</div>
-        <div class="card">Ansible</div>
-        <div class="card">AWS</div>
-        <div class="card">GCP</div>
-        <div class="card">Prometheus</div>
-        <div class="card">Grafana</div>
-        <div class="card">ArgoCD</div>
-    </div>
+<h2>👨‍💻 Meet Your Trainers</h2>
+
+<div class="trainers">
+
+<div class="trainer">
+<h3>Praveen S</h3>
+<p>Senior DevOps & Cloud Engineer</p>
+<p>7+ Years Experience</p>
+</div>
+
+<div class="trainer">
+<h3>Sachin Patil</h3>
+<p>Senior DevOps & Cloud Engineer</p>
+<p>7+ Years Experience</p>
+</div>
+
+</div>
+
 </section>
 
-<section class="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Trainer:</strong> Praveen S</p>
-    <p><strong>Experience:</strong> 7+ Years in DevOps & Cloud</p>
-    <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
-    <p><strong>Email:</strong> info@praveendevops.com</p>
+<section class="register" id="register">
+
+<h2>🚀 Start Your DevOps Journey Today</h2>
+
+<p>
+Join live instructor-led training and gain practical industry experience.
+</p>
+
+<br>
+
+<p>✅ One-to-One Training</p>
+<p>✅ Weekend Batches</p>
+<p>✅ Interview Preparation</p>
+<p>✅ Real-Time Project Support</p>
+
+<br>
+
+<p>📱 Call / WhatsApp : +91 96323 45046</p>
+<p>📧 Email : praveen.sanjeevk@gmail.com</p>
+
+<br>
+
+<a href="tel:+919632345046" class="btn">📞 Call Now</a>
+
+<a href="mailto:praveen.sanjeevk@gmail.com" class="btn">
+📧 Email Us
+</a>
+
 </section>
 
 <footer>
-    © 2026 Praveen DevOps Academy | Learn • Build • Deploy
+
+© 2026 Praveen DevOps Academy | Learn • Build • Deploy
+
 </footer>
+
+<a href="https://wa.me/919632345046" class="whatsapp">
+💬 Chat
+</a>
 
 </body>
 </html>
